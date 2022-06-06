@@ -1,0 +1,59 @@
+<div style="background-color: rgba(19, 60, 138, 0.295); padding: 10%; border-radius: 30px;">
+    <main class="form-signin">
+      <form [formGroup]="registerForm">
+        <h1 class="h3 mb-3 fw-normal" style="color: white; text-align: center">
+          Kayıt Ol
+        </h1>
+        <br />
+
+        <div class="form-floating">
+            <input
+            formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="First Name"
+            />
+            <label for="floatingInput">İsim</label>
+          </div>
+
+          <div class="form-floating" style="margin-top: 2%;">
+            <input
+            formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Last Name"
+            />
+            <label for="floatingInput">Soyisim</label>
+          </div>
+
+            <div class="form-floating" style="margin-top: 2%;">
+                <input
+                formControlName="email"
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                />
+                <label for="floatingInput">E-posta Adresi</label>
+            </div>
+
+            <div class="form-floating" style="margin-top: 2%;">
+                <input
+                formControlName="password"
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                />
+                <label for="floatingPassword">Şifre</label>
+            </div>
+  
+        <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="register()">
+          Şimdi Kayıt Ol
+        </button>
+      </form>
+    </main>
+  
+  </div>

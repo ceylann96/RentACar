@@ -1,0 +1,34 @@
+<h4> "Arabalar" </h4>
+
+<div class="form-group">
+  <input class="form-control" placeholder="Araba Arayınız" [(ngModel)]="carFilterText" />
+  <small class="form-text text-muted" *ngIf="carFilterText"> {{carFilterText}} </small>
+</div>
+
+<div class="row" *ngIf="carDetails.length ==0">
+  <div class="col-md-12">
+    <div class="alert alert-danger">
+      Araba Bulunamadı.
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let cardetail of carDetails |carFilter:carFilterText">
+    <div class="card">
+      <div class="circleBase type text-center" title="Minimum Findeks Skoru">
+        <p> {{cardetail.minFindeksScore}} </p>
+      </div>
+      <img src="{{cardetail.imagePaths[0].imagePath}}" class="card-img-top" width="auto" height="150px">
+      <div class="card-body" style="background-color: lightcoral;">
+        <h5 class="card-title"> <b> {{cardetail.brandName}}  {{cardetail.description}} - {{cardetail.modelYear}} </b></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <b> Renk: </b> {{cardetail.colorName}} </li>
+        <li class="list-group-item text-center"> <b> {{cardetail.dailyPrice |currency:"₺"}} </b>  </li>
+        <li class="list-group-item text-center"> <button routerLink="/cars/cardetail/{{cardetail.carId}}" type="button" class="btn btn-info w-100"> Daha Fazla Gör </button></li>
+        <li class="list-group-item text-center"> <button (click)="addToCart(cardetail)" type="button" class="btn btn-success w-100"> Sepete Ekle </button> </li>
+      </ul>
+    </div>
+  </div>
+</div>

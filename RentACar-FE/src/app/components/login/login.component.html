@@ -1,0 +1,44 @@
+<div style="background-color: rgba(19, 60, 138, 0.295); padding: 10%; border-radius: 30px;">
+  <main class="form-signin">
+    <form [formGroup]="loginForm">
+      <h1 class="h3 mb-3 fw-normal" style="color: white; text-align: center">
+        Giriş yap
+      </h1>
+      <br />
+      <div class="form-floating">
+        <input
+        formControlName="email"
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">E-posta </label>
+      </div>
+      <div class="form-floating" style="margin-top: 2%;">
+        <input
+        formControlName="password"
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Şifre</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">
+        Giriş Yap
+      </button>
+  
+    </form>
+  </main>
+
+</div>
+
+
+
+
+
+
+
+  
